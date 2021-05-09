@@ -1,0 +1,22 @@
+def check_win(secret_word, old_letters_guessed):
+    """Checks if the player already guessed all of the letters of the secret word.
+    Returns True or False.
+    :param secret_word: the secret word
+    :param old_letters_guessed: the old letters guessed by the user
+    :type secret_word: str
+    :type old_letters_guessed: list of strings
+    :return: True or False
+    :rtype: bool
+    """
+    correct_letters_count = 0
+    for letter in secret_word:
+        if letter in old_letters_guessed:
+            correct_letters_count +=1
+    if correct_letters_count == len(secret_word):
+        return True
+    else:
+        return False
+
+# secret_word = "friends"
+# old_letters_guessed = ['m', 'p', 'j', 'i', 's', 'k']
+# print(check_win(secret_word, old_letters_guessed))

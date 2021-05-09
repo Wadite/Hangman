@@ -1,0 +1,9 @@
+letter_guessed = input("Guess a letter: ")
+if len(letter_guessed) > 1  and letter_guessed.isalpha() == False :
+    print ("E3")
+elif letter_guessed.isalpha() == False :
+    print ("E2")
+elif len(letter_guessed) > 1 :
+    print ("E1")
+else:
+    print (letter_guessed.lower())

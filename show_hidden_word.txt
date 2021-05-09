@@ -1,0 +1,18 @@
+def show_hidden_word(secret_word, old_letters_guessed):
+    """Returns the secret word containing only the correct guesses with the rest of it as underscores and spaces.
+    """
+    word_so_far = ["_", " "] * len(secret_word)
+    for number in range(len(secret_word)):
+        if secret_word[number] in old_letters_guessed:
+            word_so_far[number*2] = secret_word[number]
+    word_so_far = "".join(word_so_far)
+    return word_so_far
+
+
+#Check
+#x = "mammals"
+#y = ['s', 'p', 'j', 'i', 'm', 'k']
+#print(show_hidden_word(x, y))
+
+
+

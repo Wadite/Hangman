@@ -1,0 +1,9 @@
+def check_valid_input(letter_guessed, old_letters_guessed) :
+    if letter_guessed.isalpha() == False :
+        return False
+    elif len(letter_guessed) > 1 :
+        return False
+    elif old_letters_guessed.count(letter_guessed) > 0 :
+        return False
+    else:
+        return True

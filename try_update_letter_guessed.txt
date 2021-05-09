@@ -1,0 +1,27 @@
+def try_update_letter_guessed(letter_guessed, old_letters_guessed):
+    """If there is an input error return False, print X and all the old letters guessed.
+    Otherwise return True and add the new typed letter to the list of the old ones.
+    :param letter_guessed: str
+    :param old_letters_guessed: list
+    :rtype: bool
+    """
+    # The first line joins, lowers, and sort the old letters alphabetly. Used later for printing the old letters at False cases.
+    old_letters_guessed_joined = " -> ".join(sorted(old_letters_guessed, key=str.lower)).lower()
+    if letter_guessed.isalpha() == False:
+        print ("X")
+        print (old_letters_guessed_joined)
+        return False
+    elif len(letter_guessed) > 1 :
+        print ("X")
+        print (old_letters_guessed_joined)
+        return False
+    elif old_letters_guessed.count(letter_guessed) > 0 or old_letters_guessed.count(letter_guessed.lower()) > 0 :
+        print ("X")
+        print (old_letters_guessed_joined)
+        return False
+    else:
+        old_letters_guessed.append(letter_guessed)
+        return True
+
+# Just a credibility check
+#try_update_letter_guessed(input("TEN OT: "), ["a", "Z", "H", "b", "j", "d"])
